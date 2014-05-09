@@ -1,10 +1,3 @@
-<?
-    require_once 'class.Tistory.Open.API.php';
-
-    if (isset($_COOKIE['accessToken'])) {
-        echo ("<script>self.location.href='./list.php';</script>"); exit;
-    }
-?>
 <!doctype html>
 <html>
 <head>
@@ -50,7 +43,7 @@
     .form-horizontal .alert {text-align:center}
 </style>
 
-<form class="form-horizontal" method="GET" action="https://www.tistory.com/oauth/authorize/">
+<form class="form-horizontal" method="GET" action="">
     <fieldset>
         <legend>Authorization</legend>
         <div class="control-group">
@@ -60,9 +53,6 @@
             </div>
         </div>
     </fieldset>
-    <input type="hidden" name="client_id" value="<?=Tistory_Open_API::$CLIENT_ID?>" />
-    <input type="hidden" name="redirect_uri" value="<?=Tistory_Open_API::$REDIRECT_URI?>" />
-    <input type="hidden" name="response_type" value="code" />
 </form>
 
 </body>
