@@ -2,6 +2,7 @@ Bootcamp for Tistory
 =======
 
 실습 사전 준비
+
 1. Apache + PHP 환경에서 서버기동이 가능하도록 준비합니다.
  - WINDOWS PC 의 경우에는 http://autoset.net/xe/ 에서 서버 프로그램을 다운로드 합니다. 
    실습때 해당 프로그램으로 진행할 예정입니다.
