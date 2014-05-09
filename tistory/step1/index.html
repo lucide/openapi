@@ -1,0 +1,16 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <title>Tistory OAuth 2.0 PHP Sample - Example Authorization Code </TITLE>
+</head>
+<body>
+
+	<form method="GET" action="https://www.tistory.com/oauth/authorize/">
+		<input type="hidden" name="client_id" value="CLIENT_ID"/>
+		<input type="hidden" name="redirect_uri" value="CALLBACK_URI"/>
+		<input type="hidden" name="response_type" value="code"/> <!-- 이단계에서는 "code" 라고 반드시 입력 -->
+	    <button type="submit">Request Athorization Code</button>
+	</form>
+
+</body>
+</html>
