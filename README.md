@@ -1,4 +1,4 @@
-Bootcamp for Tistory
+Tistory OPEN API Exmpales
 =======
 
 실습 사전 준비
