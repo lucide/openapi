@@ -8,9 +8,9 @@ if (isset($_POST['target']) == false || isset($_POST['title']) == false || isset
 	$title = $_POST['title'];
 	$accessToken = $_POST['accessToken'];
 	$content = $_POST['content'];
+	$visibility = $_POST['visibility'];
 
-
-	$writeStatus = Tistory_Open_API::postWrite($accessToken, $target, $title, $content);
+	$writeStatus = Tistory_Open_API::postWrite($accessToken, $target, $title, $content, $visibility);
 
 ?>
 <html>

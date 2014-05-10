@@ -1,21 +1,19 @@
 <?
 class Tistory_Open_API {
-    public static $CLIENT_ID = 'CLIENT_ID';
-    public static $CLIENT_SECRET = 'CLIENT_SECRET';
-    public static $REDIRECT_URI = 'CALLBACK_URI';
-    public static $DOMAIN = 'SERVICE_DOMAIN';
+    public static $CLIENT_ID = 'c6b311376165ac05e6f0d22189a522d4';
+    public static $CLIENT_SECRET = '0f277a1fd03262b241e1d49bffe83857b7cd48b1738d888df06f3de9d0218e6aaf90015b';
+    public static $REDIRECT_URI = 'http://blogapp.lucide.net/tistory/step2.completed/auth';
+    public static $DOMAIN = 'blogapp.lucide.net/tistory/step2.completed/';
 
     public static function sendRequest($uri, $params) {
-
         $ch = curl_init();
-
         curl_setopt($ch, CURLOPT_URL, $uri);
         curl_setopt($ch, CURLOPT_TIMEOUT, 30);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
-	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		
         $result = curl_exec($ch);
 
         if ($result == false) {
@@ -72,11 +70,11 @@ class Tistory_Open_API {
         return false;
     }
 
-    public static function postWrite($accessToken, $target, $title, $content) {
+    public static function postWrite($accessToken, $target, $title, $content, $visibility) {
         $target = str_replace('http://', '', $target);
         $target = str_replace('.tistory.com', '', $target);
 
-        $params = 'targetUrl=' . $target . '&access_token=' . $accessToken . '&output=json' . '&title=' . $title . '&content=' . $content;
+        $params = 'targetUrl=' . $target . '&access_token=' . $accessToken . '&output=json' . '&title=' . $title . '&content=' . $content . '&visibility=' . $visibility;
 
         $response = self::sendRequest('https://www.tistory.com/apis/post/write', $params);
 
